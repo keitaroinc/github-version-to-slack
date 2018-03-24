@@ -1,0 +1,3 @@
+"""
+Version check module
+"""

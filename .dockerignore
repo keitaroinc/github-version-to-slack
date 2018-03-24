@@ -1,0 +1,6 @@
+.env
+.git
+.gitignore
+*.yml
+*.yaml
+version-check/tests

@@ -1,0 +1,27 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: version-check
+  namespace: version-check
+spec:
+  schedule: "1 1 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: version-check
+            image: katanas/version-check:v0.5
+            imagePullPolicy: Always
+            env:
+              - name: GET_HOSTS_FROM
+                value: dns
+              - name: ETCD_HOST
+                value: "Change this to the etcd hostname"
+              - name: ETCD_PORT
+                value: "2379" # Default etcd port, change if needed
+              - name: SLACK_HOOK
+                value: "Change this to the slack hook"
+              - name: SLACK_CHANNEL
+                value: "#slack-channel" # Change to your slack channel
+          restartPolicy: OnFailure
