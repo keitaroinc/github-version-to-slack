@@ -123,10 +123,10 @@ def get_name_path(url):
     if url[-1] == '/':
         url = url[:-1]
 
-    url_splited = url.split('/')
+    url_split = url.split('/')
 
-    if len(url_splited) > 2:
-        return url_splited[-1] + '/' + url_splited[-2]
+    if len(url_split) > 2:
+        return url_split[-1] + '/' + url_split[-2]
 
     # if only user/repo is given instead of full url
     return url
@@ -192,3 +192,4 @@ def check_records(repository, version):
 
 if __name__ == '__main__':
     check_version(get_repositories())
+
