@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 
 """
+Copyright (c) 2018 Keitaro AB
+
+Use of this source code is governed by an MIT license
+that can be found in the LICENSE file or at
+https://opensource.org/licenses/MIT.
+"""
+
+"""
 Executable module for checking github version updates for repositories from repositories.txt
 and alerting the slack channel in case of new unrecorded one
 """
@@ -192,4 +200,6 @@ def check_records(repository, version):
 
 if __name__ == '__main__':
     check_version(get_repositories())
+
+
 
